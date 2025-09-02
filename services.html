@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Tech - Tech et Style</title>
+    <!-- Mêmes en-têtes de sécurité et liens CSS/Fonts que index.html -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-random123' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self';">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Tech <span>&</span> Style</a>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="services.html" class="active">Services Tech</a>
+                <a href="chaussures.html">Baskets</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="https://wa.me/50955442656" class="contact-header"><i class="fab fa-whatsapp"></i> Contact Rapide</a>
+        </div>
+    </nav>
+
+    <!-- Section Titre de la Page -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Nos Solutions Technologiques</h1>
+            <p>Des services experts pour garder vos appareils au meilleur de leur forme.</p>
+        </div>
+    </header>
+
+    <!-- Grille des Services Détaillés -->
+    <section class="section">
+        <div class="container">
+            <div class="detailed-services-grid">
+                <!-- Service 1: Réparation Mobile -->
+                <div class="detailed-service-card">
+                    <div class="service-icon-large"><i class="fas fa-mobile-screen-button"></i></div>
+                    <h2>Réparation Mobile (Smartphones & Tablettes)</h2>
+                    <p>Votre téléphone est essentiel. Nous offrons un service de réparation rapide et fiable pour toutes les marques (Apple, Samsung, etc.).</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Remplacement d'écrans fissurés</li>
+                        <li><i class="fas fa-check-circle"></i> Changement de batteries usées</li>
+                        <li><i class="fas fa-check-circle"></i> Réparation de connecteurs de charge</li>
+                        <li><i class="fas fa-check-circle"></i> Désoxydation (dégâts liquides)</li>
+                        <li><i class="fas fa-check-circle"></i> Problèmes logiciels et mises à jour</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Obtenir un Devis</a>
+                </div>
+
+                <!-- Service 2: Dépannage Informatique -->
+                <div class="detailed-service-card">
+                    <div class="service-icon-large"><i class="fas fa-laptop-medical"></i></div>
+                    <h2>Dépannage PC & Mac</h2>
+                    <p>Un ordinateur lent ou infecté ? Nous diagnostiquons et résolvons tous vos problèmes matériels et logiciels.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Éradication de virus et malwares</li>
+                        <li><i class="fas fa-check-circle"></i> Optimisation et nettoyage système</li>
+                        <li><i class="fas fa-check-circle"></i> Installation/Réinstallation (Windows, macOS)</li>
+                        <li><i class="fas fa-check-circle"></i> Remplacement de composants (disque dur, RAM)</li>
+                        <li><i class="fas fa-check-circle"></i> Récupération de données</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Demander une Intervention</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-fixed">
+        <!-- Le même footer que sur la page d'accueil -->
+    </footer>
+    <script>
+        // Script pour charger le footer dynamiquement pour éviter la répétition
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.footer-fixed').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

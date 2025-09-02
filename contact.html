@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Tech et Style</title>
+    <!-- Mêmes en-têtes de sécurité et liens CSS/Fonts que index.html -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-random123' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self';">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <!-- ... même nav que les autres pages ... -->
+    </nav>
+
+    <!-- Section Titre de la Page -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Contactez-Nous</h1>
+            <p>Une question ? Un projet ? Nous sommes à votre écoute.</p>
+        </div>
+    </header>
+
+    <!-- Formulaire de Contact -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Votre Nom Complet</label>
+                        <input type="text" id="name" name="name" required minlength="3" placeholder="Ex: Jean Dupont">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Votre Numéro de Téléphone</label>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9+\s]{8,20}" placeholder="Ex: +509 44XX XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet de votre demande</label>
+                        <select id="subject" name="subject">
+                            <option value="Service Tech">Question sur un Service Tech</option>
+                            <option value="Chaussures">Question sur une paire de Baskets</option>
+                            <option value="Devis">Demande de devis</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" rows="6" required minlength="15" placeholder="Décrivez votre besoin ici..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Envoyer le Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-fixed"></footer>
+    <script src="security.js" defer></script>
+    <script nonce="random123">
+        // Script du formulaire
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // ... même logique de validation et d'envoi WhatsApp ...
+            alert('Formulaire envoyé (simulation) ! Redirection vers WhatsApp...');
+        });
+        // Charger le footer
+        // ...
+    </script>
+</body>
+</html>
