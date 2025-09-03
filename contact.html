@@ -3,104 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Tech et Style</title>
-    <!-- Mêmes en-têtes de sécurité et liens CSS/Fonts que index.html -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-random123' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self';">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <title>Contact - Tech & Style</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers VOTRE style.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <!-- ... même nav que les autres pages ... -->
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image"></a>
+                <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="chaussures.html">Baskets</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            <a href="https://wa.me/50955442656" class="contact-header">Contactez-nous</a>
+        </div>
     </nav>
 
-    <!-- Section Titre de la Page -->
     <header class="page-header">
-        <div class="container">
-            <h1>Contactez-Nous</h1>
-            <p>Une question ? Un projet ? Nous sommes à votre écoute.</p>
-        </div>
+        <h2 class="section-title">Contactez-nous</h2>
     </header>
 
-    <!-- Formulaire de Contact -->
     <section class="section">
         <div class="container">
-            <div class="contact-wrapper">
+            <div class="contact-form-container">
                 <form id="contact-form" class="contact-form">
                     <div class="form-group">
-                        <label for="name">Votre Nom Complet</label>
-                        <input type="text" id="name" name="name" required minlength="3" placeholder="Ex: Jean Dupont">
+                        <label for="name">Nom Complet *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Votre Numéro de Téléphone</label>
-                        <input type="tel" id="phone" name="phone" required pattern="[0-9+\s]{8,20}" placeholder="Ex: +509 44XX XXXX">
+                        <label for="phone">Téléphone *</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Sujet de votre demande</label>
-                        <select id="subject" name="subject">
-                            <option value="Service Tech">Question sur un Service Tech</option>
-                            <option value="Chaussures">Question sur une paire de Baskets</option>
-                            <option value="Devis">Demande de devis</option>
-                            <option value="Autre">Autre</option>
-                        </select>
+                        <label for="message">Votre Message *</label>
+                        <textarea id="message" name="message" required rows="6"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Votre Message</label>
-                        <textarea id="message" name="message" rows="6" required minlength="15" placeholder="Décrivez votre besoin ici..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Envoyer le Message</button>
+                    <button type="submit" class="btn btn-primary">Envoyer via WhatsApp</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-fixed"></footer>
-    <script src="security.js" defer></script>
-    <script nonce="random123">
-        // Script du formulaire
-        // ===================================================
-// NOUVEAU CODE FINAL POUR LE FORMULAIRE DE CONTACT
-// ===================================================
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    // Empêche la page de se recharger
-    event.preventDefault();
-
-    // 1. Récupérer les valeurs des champs du formulaire
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-
-    // 2. Valider que les champs ne sont pas vides
-    if (name.length < 2 || phone.length < 8 || message.length < 10) {
-        alert('Veuillez remplir tous les champs correctement avant d\'envoyer.');
-        return; // Arrête le processus si un champ est invalide
-    }
-
-    // 3. Construire le message formaté pour WhatsApp
-    // %0A est le code pour un "saut de ligne" dans une URL
-    const whatsappMessage = `Bonjour Tech et Style, j'ai une nouvelle demande depuis le site :%0A%0A` +
-                            `*Nom :* ${name}%0A` +
-                            `*Téléphone :* ${phone}%0A` +
-                            `*Sujet :* ${subject}%0A%0A` +
-                            `*Message :*%0A"${message}"`;
-
-    // 4. Créer le lien WhatsApp final avec votre numéro
-    const whatsappURL = `https://wa.me/50955442656?text=${whatsappMessage}`;
-
-    // 5. Ouvrir WhatsApp dans un nouvel onglet
-    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
-
-    // 6. Réinitialiser le formulaire pour une nouvelle saisie
-    document.getElementById('contact-form').reset();
-});
-        // Charger le footer
-        // ...
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fullName = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+        const whatsappMessage = `Nouveau message de contact:\n\nNom: ${fullName}\nTéléphone: ${phone}\n\nMessage:\n${message}`;
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        window.open(`https://wa.me/50955442656?text=${encodedMessage}`, '_blank');
+        alert('Votre message est prêt à être envoyé sur WhatsApp !');
+        this.reset();
+    });
     </script>
 </body>
 </html>

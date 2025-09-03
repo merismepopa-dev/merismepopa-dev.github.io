@@ -709,3 +709,167 @@ body {
         padding: 2rem 1rem;
     }
 }
+/* --- STYLE POUR LOGO + SLOGAN --- */
+
+/* Conteneur principal */
+.logo-container {
+    display: flex;
+    flex-direction: column; /* Aligne le logo et le slogan verticalement */
+    align-items: center;    /* Centre les éléments horizontalement */
+    text-align: center;
+}
+
+/* L'image du logo */
+.logo-image {
+    height: 180px !important; /* Ajustez la taille du logo si besoin */
+    width: auto;
+}
+
+/* Le slogan */
+.slogan {
+    font-size: 0.9rem !important;      /* Texte plus petit */
+    color: #a0a0a0;         /* Un gris clair, discret */
+    margin-top: 5px;        /* Petit espace entre le logo et le slogan */
+    font-style: italic;     /* Pour un look plus élégant */
+    letter-spacing: 0.5px;  /* Un peu plus d'espace entre les lettres */
+}
+/* ======================================= */
+/* === STYLES POUR LOGO + SLOGAN (FINAL) === */
+/* ======================================= */
+
+/* Conteneur principal du logo */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne à gauche */
+}
+
+/* L'image du logo elle-même */
+.logo-image {
+    height: 60px; /* Ajustez la taille si besoin */
+    width: auto;
+}
+
+/* Le slogan sous le logo */
+.slogan {
+    font-size: 0.8rem;
+    color: #6c757d; /* Un gris discret */
+    margin-top: 4px;
+    font-style: italic;
+}
+/* ======================================= */
+/* === STYLES POUR PAGES SECONDAIRES === */
+/* ======================================= */
+
+/* En-tête commun pour les pages secondaires */
+.page-header {
+    background: var(--light);
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.page-header .section-title {
+    margin-bottom: 0;
+}
+
+/* Conteneur pour la table des tarifs */
+.pricing-table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 1.1rem;
+}
+
+.pricing-table th {
+    font-family: var(--font-title);
+    color: var(--primary);
+}
+
+/* Conteneur pour le formulaire de contact */
+.contact-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 1rem;
+}
+/* ================================================= */
+/* === CORRECTION TEXTE SUR SECTIONS À FOND CLAIR === */
+/* ================================================= */
+
+/* Règle pour l'en-tête des pages (le titre principal) */
+.page-header {
+    background: var(--light); /* Fond gris clair */
+    color: #333;              /* FORCE LE TEXTE EN NOIR */
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Règle pour les cartes de service sur la page Services */
+.detailed-service-card {
+    background: var(--light);
+    padding: 2.5rem;
+    border-radius: 15px;
+    color: #333;              /* FORCE LE TEXTE EN NOIR */
+}
+
+/* Règle pour les cartes de produit sur la page Baskets */
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    color: #333;              /* FORCE LE TEXTE EN NOIR */
+}
+
+/* On s'assure que les icônes et les prix gardent leurs couleurs spécifiques */
+.service-icon-large {
+    color: var(--accent); /* Force la couleur de l'icône */
+}
+.product-price {
+    color: var(--primary); /* Force la couleur du prix */
+}
