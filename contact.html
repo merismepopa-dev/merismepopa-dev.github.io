@@ -63,11 +63,42 @@
     <script src="security.js" defer></script>
     <script nonce="random123">
         // Script du formulaire
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // ... même logique de validation et d'envoi WhatsApp ...
-            alert('Formulaire envoyé (simulation) ! Redirection vers WhatsApp...');
-        });
+        // ===================================================
+// NOUVEAU CODE FINAL POUR LE FORMULAIRE DE CONTACT
+// ===================================================
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    // Empêche la page de se recharger
+    event.preventDefault();
+
+    // 1. Récupérer les valeurs des champs du formulaire
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // 2. Valider que les champs ne sont pas vides
+    if (name.length < 2 || phone.length < 8 || message.length < 10) {
+        alert('Veuillez remplir tous les champs correctement avant d\'envoyer.');
+        return; // Arrête le processus si un champ est invalide
+    }
+
+    // 3. Construire le message formaté pour WhatsApp
+    // %0A est le code pour un "saut de ligne" dans une URL
+    const whatsappMessage = `Bonjour Tech et Style, j'ai une nouvelle demande depuis le site :%0A%0A` +
+                            `*Nom :* ${name}%0A` +
+                            `*Téléphone :* ${phone}%0A` +
+                            `*Sujet :* ${subject}%0A%0A` +
+                            `*Message :*%0A"${message}"`;
+
+    // 4. Créer le lien WhatsApp final avec votre numéro
+    const whatsappURL = `https://wa.me/50955442656?text=${whatsappMessage}`;
+
+    // 5. Ouvrir WhatsApp dans un nouvel onglet
+    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+
+    // 6. Réinitialiser le formulaire pour une nouvelle saisie
+    document.getElementById('contact-form').reset();
+});
         // Charger le footer
         // ...
     </script>

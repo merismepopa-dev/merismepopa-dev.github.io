@@ -639,3 +639,73 @@ body {
     border-radius: 15px; /* Coins arrondis pour un look moderne */
     box-shadow: var(--shadow); /* La même ombre que vos autres cartes */
 }
+/* ======================================= */
+/* === AMÉLIORATIONS POUR L'AFFICHAGE MOBILE === */
+/* ======================================= */
+
+/* Cette règle s'applique à tous les écrans de moins de 768px de large */
+@media (max-width: 768px) {
+
+    /* --- GÉNÉRAL --- */
+    .container {
+        /* Ajoute un peu plus d'espace sur les côtés */
+        padding: 0 15px;
+    }
+
+    .section {
+        /* Réduit l'espacement vertical pour être moins long à faire défiler */
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        /* Titres de section un peu plus petits sur mobile */
+        font-size: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* --- NAVIGATION --- */
+    .nav-container {
+        /* Permet au logo et au bouton de mieux s'aligner */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        /* Le logo prend toute la largeur pour être centré */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* --- GRILLES (Services, Produits, etc.) --- */
+    .features-grid,
+    .services-preview,
+    .shoes-grid,
+    .products-grid,
+    .detailed-services-grid {
+        /* Force l'affichage sur une seule colonne */
+        grid-template-columns: 1fr;
+        gap: 1.5rem; /* Réduit l'espace entre les cartes */
+    }
+
+    /* --- CARTES DE PRODUIT --- */
+    .product-card {
+        /* Centre le texte dans les cartes sur mobile */
+        text-align: center;
+    }
+
+    .product-info .btn {
+        /* Le bouton prend plus de place pour être facile à cliquer */
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* --- FORMULAIRE DE CONTACT --- */
+    .contact-wrapper {
+        /* Supprime le padding pour prendre tout l'écran */
+        padding: 2rem 1rem;
+    }
+}
