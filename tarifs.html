@@ -8,22 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="container nav-container">
-            <div class="logo-container">
-                <a href="index.html"><img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image"></a>
-                <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
-            </div>
-            <div class="nav-links">
-                <a href="index.html">Accueil</a>
-                <a href="services.html">Services</a>
-                <a href="chaussures.html">Baskets</a>
-                <a href="tarifs.html" class="active">Tarifs</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <a href="https://wa.me/50955442656" class="contact-header">Contactez-nous</a>
+    <!-- Navigation Unifiée -->
+<nav>
+    <div class="container nav-container">
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
+            </a>
+            <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
         </div>
-    </nav>
+
+        <!-- Le bouton Hamburger (sera visible sur mobile) -->
+        <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu">
+            <!-- L'icône sera ajoutée par JavaScript -->
+        </button>
+
+        <!-- Vos liens de navigation -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services Tech</a>
+            <a href="chaussures.html">Baskets</a>
+            <a href="tarifs.html"class="active">Tarifs</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Le bouton WhatsApp -->
+        <a href="https://wa.me/50955442656" class="contact-header">
+            <i class="fab fa-whatsapp"></i> Contact Rapide
+        </a>
+    </div>
+</nav>
 
     <header class="page-header">
         <h2 class="section-title">Nos Tarifs</h2>
@@ -76,6 +90,6 @@
             </div>
         </div>
     </section>
-
+    <script src="main.js" defer></script>
 </body>
 </html>

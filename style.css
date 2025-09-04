@@ -444,7 +444,44 @@ footer {
     .hero-title { font-size: 2.8rem; }
     .section-title { font-size: 2.4rem; }
 }
+/* ======================================= */
+/* === AJUSTEMENTS POUR TABLETTES (Écrans moyens) === */
+/* ======================================= */
 
+/* Cette règle s'applique aux écrans jusqu'à 992px de large */
+@media (max-width: 992px) {
+
+    /* On réduit la taille des titres pour qu'ils ne prennent pas tout l'écran */
+    .hero-title {
+        font-size: 2.8rem; /* Un peu plus petit que la version PC */
+    }
+
+    .section-title {
+        font-size: 2.4rem; /* Un peu plus petit aussi */
+    }
+
+    /* On réduit la taille des cartes pour qu'elles soient moins massives */
+    .feature-card,
+    .service-card,
+    .shoe-card {
+        padding: 2rem; /* Moins d'espace intérieur */
+    }
+
+    /* On force les grilles à passer sur 2 colonnes au lieu de 3 ou 4 */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
+    }
+
+    .services-preview,
+    .shoes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Permet de passer à 2 ou 1 colonne de manière fluide */
+    }
+
+    /* On ajuste la navigation pour qu'elle ne soit pas trop serrée */
+    .nav-links {
+        gap: 1.5rem; /* Moins d'espace entre les liens */
+    }
+}
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -727,7 +764,7 @@ body {
 
 /* Le slogan */
 .slogan {
-    font-size: 0.9rem !important;      /* Texte plus petit */
+    font-size: 0.8rem !important;      /* Texte plus petit */
     color: #a0a0a0;         /* Un gris clair, discret */
     margin-top: 5px;        /* Petit espace entre le logo et le slogan */
     font-style: italic;     /* Pour un look plus élégant */
@@ -872,4 +909,146 @@ body {
 }
 .product-price {
     color: var(--primary); /* Force la couleur du prix */
+}
+/* ======================================= */
+/* === MENU HAMBURGER POUR LE MOBILE === */
+/* ======================================= */
+
+/* Style du bouton hamburger (caché par défaut) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* Media Query pour les écrans de moins de 992px (tablettes et mobiles) */
+@media (max-width: 992px) {
+
+    /* On affiche le bouton hamburger */
+    .hamburger {
+        display: block;
+        order: 3; /* Pour le placer après les liens */
+    }
+
+    /* On cache le bouton "Contact Rapide" pour faire de la place */
+    .nav-container .contact-header {
+        display: none;
+    }
+
+    /* On ajuste le conteneur de la navigation */
+    .nav-container {
+        justify-content: space-between; /* Logo à gauche, hamburger à droite */
+        flex-wrap: nowrap;
+    }
+
+    /* On positionne le menu de liens en dehors de l'écran par défaut */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Complètement à droite, caché */
+        width: 70%;
+        height: 100vh; /* Toute la hauteur de l'écran */
+        background: white;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        
+        /* On change la direction pour un affichage vertical */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        
+        transition: right 0.4s ease-in-out;
+    }
+
+    /* Classe 'active' qui sera ajoutée par JavaScript pour afficher le menu */
+    .nav-links.active {
+        right: 0; /* Le menu glisse et devient visible */
+    }
+
+    /* On change l'icône du hamburger en croix (X) quand le menu est ouvert */
+    .hamburger.active .fa-bars {
+        display: none;
+    }
+    .hamburger .fa-times {
+        display: none;
+    }
+    .hamburger.active .fa-times {
+        display: block;
+    }
+}
+/* ======================================= */
+/* === MENU HAMBURGER POUR LE MOBILE (CORRIGÉ) === */
+/* ======================================= */
+
+/* Style du bouton hamburger (caché par défaut) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Media Query pour les écrans de moins de 992px (tablettes et mobiles) */
+@media (max-width: 992px) {
+
+    /* --- Correction pour la barre de navigation --- */
+    .nav-container {
+        flex-direction: row !important; /* FORCE la direction horizontale */
+        justify-content: space-between !important; /* Aligne les éléments aux extrémités */
+        align-items: center !important; /* Centre verticalement */
+        flex-wrap: nowrap !important; /* Empêche le retour à la ligne */
+    }
+
+    /* On affiche le bouton hamburger */
+    .hamburger {
+        display: block;
+        order: 3; /* Le place en dernier élément visuel */
+    }
+
+    /* On cache le bouton "Contact Rapide" pour faire de la place */
+    .nav-container .contact-header {
+        display: none;
+    }
+    
+    /* --- Ajustement du logo --- */
+    .logo-container {
+        order: 1; /* S'assure qu'il est le premier élément */
+    }
+    
+    .logo-image {
+        height: 45px; /* Taille réduite pour mobile */
+    }
+
+    /* --- Comportement du menu déroulant --- */
+    .nav-links {
+        order: 2; /* Ordre dans le flux */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* --- Icône du bouton hamburger --- */
+    .hamburger.active .fa-bars { display: none; }
+    .hamburger .fa-times { display: none; }
+    .hamburger.active .fa-times { display: block; }
 }

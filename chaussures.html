@@ -21,26 +21,36 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-   <div class="logo-container">
-    <a href="index.html" class="logo-link">
-        <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
-    </a>
-    <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
-</div>
-            <div class="nav-links">
-                <a href="index.html" >Accueil</a>
-                <a href="services.html">Services Tech</a>
-                <a href="chaussures.html"class="active">Baskets</a>
-                <a href="tarifs.html">Tarifs</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <a href="https://wa.me/50955442656" class="contact-header">
-                <i class="fab fa-whatsapp"></i> Contact Rapide
+    <!-- Navigation Unifiée -->
+<nav>
+    <div class="container nav-container">
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
             </a>
+            <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
         </div>
-    </nav>
+
+        <!-- Le bouton Hamburger (sera visible sur mobile) -->
+        <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu">
+            <!-- L'icône sera ajoutée par JavaScript -->
+        </button>
+
+        <!-- Vos liens de navigation -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services Tech</a>
+            <a href="chaussures.html"class="active">Baskets</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Le bouton WhatsApp -->
+        <a href="https://wa.me/50955442656" class="contact-header">
+            <i class="fab fa-whatsapp"></i> Contact Rapide
+        </a>
+    </div>
+</nav>
 
     <!-- Section Titre de la Page -->
     <header class="page-header">
@@ -153,5 +163,6 @@
             window.open("https://wa.me/50955442656?text=" + encodedMessage, '_blank', 'noopener,noreferrer');
         }
     </script>
+    <script src="main.js" defer></script>
 </body>
 </html>
