@@ -4,103 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services Tech - Tech et Style</title>
-    <!-- Mêmes en-têtes de sécurité et liens CSS/Fonts que index.html -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-random123' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self';">
+    <meta name="description" content="Découvrez nos services de réparation mobile, dépannage PC & Mac, optimisation, récupération de données et assistance informatique en Haïti.">
+    <meta name="keywords" content="services, réparation, informatique, mobile, PC, Mac, optimisation, récupération, Tech et Style, Haïti">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.tidio.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://widget-v4.tidio.co; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://widget-v4.tidio.co; img-src 'self' data: https:; connect-src 'self' https://widget-v4.tidio.co wss://socket.tidio.co; frame-src https://widget-v4.tidio.co; worker-src 'self' blob:; frame-ancestors 'none'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer-policy" content="strict-origin-when-cross-origin">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Unifiée -->
-<nav>
-    <div class="container nav-container">
-        <div class="logo-container">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
-            </a>
-            <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
+    <nav role="navigation" aria-label="Menu principal">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link" aria-label="Accueil Tech et Style">
+                    <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image" loading="lazy">
+                </a>
+                <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
+            </div>
+            <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu" tabindex="0" aria-controls="nav-links" aria-expanded="false"></button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="services.html" class="active" aria-current="page">Services Tech</a>
+                <a href="chaussures.html">Baskets</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="https://wa.me/50955442656" class="contact-header" aria-label="Contact rapide WhatsApp"><i class="fab fa-whatsapp"></i> Contact Rapide</a>
         </div>
-
-        <!-- Le bouton Hamburger (sera visible sur mobile) -->
-        <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu">
-            <!-- L'icône sera ajoutée par JavaScript -->
-        </button>
-
-        <!-- Vos liens de navigation -->
-        <div class="nav-links" id="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="services.html"class="active">Services Tech</a>
-            <a href="chaussures.html">Baskets</a>
-            <a href="tarifs.html">Tarifs</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <!-- Le bouton WhatsApp -->
-        <a href="https://wa.me/50955442656" class="contact-header">
-            <i class="fab fa-whatsapp"></i> Contact Rapide
-        </a>
-    </div>
-</nav>
-
-    <!-- Section Titre de la Page -->
-    <header class="page-header">
-        <div class="container">
-            <h1>Nos Solutions Technologiques</h1>
-            <p>Des services experts pour garder vos appareils au meilleur de leur forme.</p>
-        </div>
-    </header>
-
-    <!-- Grille des Services Détaillés -->
-    <section class="section">
-        <div class="container">
-            <div class="detailed-services-grid">
-                <!-- Service 1: Réparation Mobile -->
-                <div class="detailed-service-card">
-                    <div class="service-icon-large"><i class="fas fa-mobile-screen-button"></i></div>
-                    <h2>Réparation Mobile (Smartphones & Tablettes)</h2>
-                    <p>Votre téléphone est essentiel. Nous offrons un service de réparation rapide et fiable pour toutes les marques (Apple, Samsung, etc.).</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Remplacement d'écrans fissurés</li>
-                        <li><i class="fas fa-check-circle"></i> Changement de batteries usées</li>
-                        <li><i class="fas fa-check-circle"></i> Réparation de connecteurs de charge</li>
-                        <li><i class="fas fa-check-circle"></i> Désoxydation (dégâts liquides)</li>
-                        <li><i class="fas fa-check-circle"></i> Problèmes logiciels et mises à jour</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Obtenir un Devis</a>
-                </div>
-
-                <!-- Service 2: Dépannage Informatique -->
-                <div class="detailed-service-card">
-                    <div class="service-icon-large"><i class="fas fa-laptop-medical"></i></div>
-                    <h2>Dépannage PC & Mac</h2>
-                    <p>Un ordinateur lent ou infecté ? Nous diagnostiquons et résolvons tous vos problèmes matériels et logiciels.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Éradication de virus et malwares</li>
-                        <li><i class="fas fa-check-circle"></i> Optimisation et nettoyage système</li>
-                        <li><i class="fas fa-check-circle"></i> Installation/Réinstallation (Windows, macOS)</li>
-                        <li><i class="fas fa-check-circle"></i> Remplacement de composants (disque dur, RAM)</li>
-                        <li><i class="fas fa-check-circle"></i> Récupération de données</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Demander une Intervention</a>
+    </nav>
+    <main id="main-content">
+        <header class="page-header" role="banner">
+            <div class="container">
+                <h1>Nos Solutions Technologiques</h1>
+                <p>Des services experts pour garder vos appareils au meilleur de leur forme.</p>
+            </div>
+        </header>
+        <section class="section" aria-label="Services détaillés">
+            <div class="container">
+                <div class="detailed-services-grid">
+                    <div class="detailed-service-card">
+                        <div class="service-icon-large"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i></div>
+                        <h2>Réparation Mobile (Smartphones & Tablettes)</h2>
+                        <p>Votre téléphone est essentiel. Nous offrons un service de réparation rapide et fiable pour toutes les marques (Apple, Samsung, etc.).</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Remplacement d'écrans fissurés</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Changement de batteries usées</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Réparation de connecteurs de charge</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Désoxydation (dégâts liquides)</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Problèmes logiciels et mises à jour</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Obtenir un Devis</a>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="service-icon-large"><i class="fas fa-laptop-medical" aria-hidden="true"></i></div>
+                        <h2>Dépannage PC & Mac</h2>
+                        <p>Un ordinateur lent ou infecté ? Nous diagnostiquons et résolvons tous vos problèmes matériels et logiciels.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Éradication de virus et malwares</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Optimisation et nettoyage système</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Installation/Réinstallation (Windows, macOS)</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Remplacement de composants (disque dur, RAM)</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Récupération de données</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Demander une Intervention</a>
+                    </div>
                 </div>
             </div>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h2 class="logo-footer">Tech <span>&</span> Style</h2>
+                    <p>Votre partenaire confiance pour la technologie et la mode en Haïti.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/50955442656" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h2>Navigation</h2>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="services.html" aria-current="page">Services Tech</a></li>
+                        <li><a href="chaussures.html">Baskets</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h2>Contact Info</h2>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+50955442656">55 442 656</a></p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contact@techetstyle.ht" data-email>contact@techetstyle.ht</a></p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i> Lun-Sam : 8h - 18h</p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Tech et Style. Tous droits réservés.</p></div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-fixed">
-        <!-- Le même footer que sur la page d'accueil -->
     </footer>
-    <script>
-        // Script pour charger le footer dynamiquement pour éviter la répétition
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('.footer-fixed').innerHTML = data;
-            });
-    </script>
+    <!-- Bouton pour remonter en haut -->
+    <a href="#" id="scrollTopBtn" title="Remonter en haut" aria-label="Remonter en haut"><i class="fas fa-arrow-up"></i></a>
+    <script src="security.js" defer></script>
     <script src="main.js" defer></script>
+    <script src="https://code.tidio.co/1juzgwh1khwevyeb0hdjpgy6dnqhbodr.js" async></script>
 </body>
 </html>

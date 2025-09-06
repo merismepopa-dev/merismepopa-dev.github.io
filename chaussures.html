@@ -3,127 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collection Sneakers - Tech et Style</title>
-    
-    <!-- En-têtes de sécurité et liens CSS/Fonts -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-random123' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self';">
+    <title>Collection Baskets - Tech et Style</title>
+    <meta name="description" content="Découvrez la collection de baskets tendance sélectionnées par Tech et Style : Nike, Balenciaga, Timberland, Adidas. Qualité, confort et style en Haïti.">
+    <meta name="keywords" content="baskets, chaussures, sneakers, Nike, Balenciaga, Timberland, Adidas, mode, Haïti, Tech et Style">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.tidio.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://widget-v4.tidio.co; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://widget-v4.tidio.co; img-src 'self' data: https:; connect-src 'self' https://widget-v4.tidio.co wss://socket.tidio.co; frame-src https://widget-v4.tidio.co; worker-src 'self' blob:; frame-ancestors 'none'; form-action 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta name="referrer-policy" content="strict-origin-when-cross-origin">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <!-- Navigation Unifiée -->
-<nav>
-    <div class="container nav-container">
-        <div class="logo-container">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
-            </a>
-            <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
-        </div>
-
-        <!-- Le bouton Hamburger (sera visible sur mobile) -->
-        <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu">
-            <!-- L'icône sera ajoutée par JavaScript -->
-        </button>
-
-        <!-- Vos liens de navigation -->
-        <div class="nav-links" id="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="services.html">Services Tech</a>
-            <a href="chaussures.html"class="active">Baskets</a>
-            <a href="tarifs.html">Tarifs</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <!-- Le bouton WhatsApp -->
-        <a href="https://wa.me/50955442656" class="contact-header">
-            <i class="fab fa-whatsapp"></i> Contact Rapide
-        </a>
-    </div>
-</nav>
-
-    <!-- Section Titre de la Page -->
-    <header class="page-header">
-        <div class="container">
-            <h1>Notre Collection de Baskets</h1>
-            <p>Des modèles sélectionnés pour leur confort, leur qualité et leur style unique.</p>
-        </div>
-    </header>
-
-    <!-- Grille des Produits -->
-    <section class="section">
-        <div class="container">
-            <div class="products-grid">
-
-                <!-- Produit 1: Nike Air Force 1 -->
-                <div class="product-card">
-                    <img src="images/nike-air-force.png" alt="Basket Nike Air Force 1 blanche" class="product-image">
-                    <div class="product-info">
-                        <h3>Nike Air Force 1 '07</h3>
-                        <p class="product-description">L'icône intemporelle. Un classique indémodable en cuir blanc, parfait pour tous les styles.</p>
-                        <p class="product-price">5,500 HTG</p>
-                        <button class="btn btn-secondary" onclick="secureOrder('Nike Air Force 1', 5500)">Commander via WhatsApp</button>
-                    </div>
-                </div>
-
-                <!-- Produit 2: Balenciaga Triple S -->
-                <div class="product-card">
-                    <img src="images/balenciaga-triple-s.png" alt="Basket Balenciaga Triple S" class="product-image">
-                    <div class="product-info">
-                        <h3>Balenciaga Triple S</h3>
-                        <p class="product-description">La référence du luxe streetwear. Une silhouette massive et audacieuse pour un look qui ne passe pas inaperçu.</p>
-                        <p class="product-price">8,000 HTG</p>
-                        <button class="btn btn-secondary" onclick="secureOrder('Balenciaga Triple S', 8000)">Commander via WhatsApp</button>
-                    </div>
-                </div>
-
-                <!-- Produit 3: Timberland 6-Inch Premium -->
-                <div class="product-card">
-                    <img src="images/timberland-boot.png" alt="Botte Timberland 6-Inch Premium" class="product-image">
-                    <div class="product-info">
-                        <h3>Timberland 6-Inch Premium</h3>
-                        <p class="product-description">La botte robuste et stylée par excellence. En cuir nubuck couleur blé, prête pour la ville comme pour l'aventure.</p>
-                        <p class="product-price">7,500 HTG</p>
-                        <button class="btn btn-secondary" onclick="secureOrder('Timberland 6-Inch', 7500)">Commander via WhatsApp</button>
-                    </div>
-                </div>
-
-                <!-- Produit 4: Adidas Forum Low -->
-                <div class="product-card">
-                    <img src="images/adidas-forum.png" alt="Basket Adidas Forum Low" class="product-image">
-                    <div class="product-info">
-                        <h3>Adidas Forum Low</h3>
-                        <p class="product-description">Un classique du basketball des années 80, revisité pour la rue. Confortable et stylé avec sa bride distinctive.</p>
-                        <p class="product-price">6,000 HTG</p>
-                        <button class="btn btn-secondary" onclick="secureOrder('Adidas Forum Low', 6000)">Commander via WhatsApp</button>
-                    </div>
-                </div>
-
+    <nav role="navigation" aria-label="Menu principal">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link" aria-label="Accueil Tech et Style">
+                    <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
+                </a>
+                <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
             </div>
+            <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu" tabindex="0" aria-controls="nav-links" aria-expanded="false"></button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services Tech</a>
+                <a href="chaussures.html" class="active" aria-current="page">Baskets</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="https://wa.me/50955442656" class="contact-header" aria-label="Contact rapide WhatsApp"><i class="fab fa-whatsapp"></i> Contact Rapide</a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
+    </nav>
+    <main id="main-content">
+        <header class="page-header" role="banner">
+            <div class="container">
+                <h1>Notre Collection de Baskets</h1>
+                <p>Des modèles sélectionnés pour leur confort, leur qualité et leur style unique.</p>
+            </div>
+        </header>
+        <section class="section" aria-label="Collection de baskets">
+            <div class="container">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/nike-air-force.png" alt="Basket Nike Air Force 1 blanche" class="product-image" loading="lazy">
+                        <div class="product-info">
+                            <h2>Nike Air Force 1 '07</h2>
+                            <p class="product-description">L'icône intemporelle. Un classique indémodable en cuir blanc, parfait pour tous les styles.</p>
+                            <p class="product-price">5,500 HTG</p>
+                            <button class="btn btn-secondary" onclick="secureOrder('Nike Air Force 1', 5500)">Commander via WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/balenciaga-triple-s.png" alt="Basket Balenciaga Triple S" class="product-image" loading="lazy">
+                        <div class="product-info">
+                            <h2>Balenciaga Triple S</h2>
+                            <p class="product-description">La référence du luxe streetwear. Une silhouette massive et audacieuse pour un look qui ne passe pas inaperçu.</p>
+                            <p class="product-price">8,000 HTG</p>
+                            <button class="btn btn-secondary" onclick="secureOrder('Balenciaga Triple S', 8000)">Commander via WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/timberland-boot.png" alt="Botte Timberland 6-Inch Premium" class="product-image" loading="lazy">
+                        <div class="product-info">
+                            <h2>Timberland 6-Inch Premium</h2>
+                            <p class="product-description">La botte robuste et stylée par excellence. En cuir nubuck couleur blé, prête pour la ville comme pour l'aventure.</p>
+                            <p class="product-price">7,500 HTG</p>
+                            <button class="btn btn-secondary" onclick="secureOrder('Timberland 6-Inch', 7500)">Commander via WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/adidas-forum.png" alt="Basket Adidas Forum Low" class="product-image" loading="lazy">
+                        <div class="product-info">
+                            <h2>Adidas Forum Low</h2>
+                            <p class="product-description">Un classique du basketball des années 80, revisité pour la rue. Confortable et stylé avec sa bride distinctive.</p>
+                            <p class="product-price">6,000 HTG</p>
+                            <button class="btn btn-secondary" onclick="secureOrder('Adidas Forum Low', 6000)">Commander via WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                  <div class="logo-container">
-    <a href="index.html" class="logo-link">
-        <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
-    </a>
-    <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
-</div>
+                    <h2 class="logo-footer">Tech <span>&</span> Style</h2>
                     <p>Votre partenaire confiance pour la technologie et la mode en Haïti.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -132,37 +100,36 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Navigation</h3>
+                    <h2>Navigation</h2>
                     <ul>
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="services.html">Services Tech</a></li>
-                        <li><a href="chaussures.html">Baskets</a></li>
+                        <li><a href="chaussures.html" aria-current="page">Baskets</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-phone"></i> 55 442 656</p>
-                    <p><i class="fas fa-envelope"></i> <span data-email>contact@techetstyle.ht</span></p>
-                    <p><i class="fas fa-clock"></i> Lun-Sam : 8h - 18h</p>
+                    <h2>Contact Info</h2>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+50955442656">55 442 656</a></p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contact@techetstyle.ht" data-email>contact@techetstyle.ht</a></p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i> Lun-Sam : 8h - 18h</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tech et Style. Tous droits réservés.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Tech et Style. Tous droits réservés.</p></div>
         </div>
     </footer>
-
+    <!-- Bouton pour remonter en haut -->
+    <a href="#" id="scrollTopBtn" title="Remonter en haut" aria-label="Remonter en haut"><i class="fas fa-arrow-up"></i></a>
     <script src="security.js" defer></script>
-    <script nonce="random123">
-        // Fonction sécurisée pour commander via WhatsApp
+    <script src="main.js" defer></script>
+    <script>
         function secureOrder(productName, price) {
-            let cleanName = String(productName).replace(/[<>]/g, '').substring(0, 100);
-            const message = `Bonjour, je souhaite commander le modèle : ${cleanName} (${price} HTG).`;
+            const sanitizedName = String(productName).replace(/[<>]/g, "").substring(0, 100);
+            const message = `Bonjour, je souhaite commander le modèle : ${sanitizedName} (${price} HTG).`;
             const encodedMessage = encodeURIComponent(message);
-            window.open("https://wa.me/50955442656?text=" + encodedMessage, '_blank', 'noopener,noreferrer');
+            window.open(`https://wa.me/50955442656?text=${encodedMessage}`, "_blank", "noopener,noreferrer");
         }
     </script>
-    <script src="main.js" defer></script>
+    <script src="https://code.tidio.co/1juzgwh1khwevyeb0hdjpgy6dnqhbodr.js" async></script>
 </body>
 </html>

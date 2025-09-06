@@ -4,80 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Tech & Style</title>
-    <link rel="stylesheet" href="style.css"> <!-- Lien vers VOTRE style.css -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.tidio.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://widget-v4.tidio.co; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://widget-v4.tidio.co; img-src 'self' data: https:; connect-src 'self' https://widget-v4.tidio.co wss://socket.tidio.co; frame-src https://widget-v4.tidio.co; worker-src 'self' blob:; frame-ancestors 'none'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer-policy" content="strict-origin-when-cross-origin">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Unifiée -->
-<nav>
-    <div class="container nav-container">
-        <div class="logo-container">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image">
-            </a>
-            <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link"><img src="images/logo-techetstyle.png" alt="Logo Tech et Style" class="logo-image" loading="lazy"></a>
+                <p class="slogan">La technologie à vos pieds, le style à votre portée.</p>
+            </div>
+            <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu"></button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services Tech</a>
+                <a href="chaussures.html">Baskets</a>
+                <a href="tarifs.html">Tarifs</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            <a href="https://wa.me/50955442656" class="contact-header"><i class="fab fa-whatsapp"></i> Contact Rapide</a>
         </div>
-
-        <!-- Le bouton Hamburger (sera visible sur mobile) -->
-        <button class="hamburger" id="hamburger-button" aria-label="Ouvrir le menu">
-            <!-- L'icône sera ajoutée par JavaScript -->
-        </button>
-
-        <!-- Vos liens de navigation -->
-        <div class="nav-links" id="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="services.html">Services Tech</a>
-            <a href="chaussures.html">Baskets</a>
-            <a href="tarifs.html">Tarifs</a>
-            <a href="contact.html"class="active">Contact</a>
-        </div>
-
-        <!-- Le bouton WhatsApp -->
-        <a href="https://wa.me/50955442656" class="contact-header">
-            <i class="fab fa-whatsapp"></i> Contact Rapide
-        </a>
-    </div>
-</nav>
-
+    </nav>
     <header class="page-header">
         <h2 class="section-title">Contactez-nous</h2>
     </header>
-
     <section class="section">
         <div class="container">
             <div class="contact-form-container">
                 <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nom Complet *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Téléphone *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Votre Message *</label>
-                        <textarea id="message" name="message" required rows="6"></textarea>
-                    </div>
+                    <div class="form-group"><label for="name">Nom Complet *</label><input type="text" id="name" name="name" required></div>
+                    <div class="form-group"><label for="phone">Téléphone *</label><input type="tel" id="phone" name="phone" required></div>
+                    <div class="form-group"><label for="message">Votre Message *</label><textarea id="message" name="message" required rows="6"></textarea></div>
                     <button type="submit" class="btn btn-primary">Envoyer via WhatsApp</button>
                 </form>
             </div>
         </div>
     </section>
-
-    <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const fullName = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const message = document.getElementById('message').value;
-        const whatsappMessage = `Nouveau message de contact:\n\nNom: ${fullName}\nTéléphone: ${phone}\n\nMessage:\n${message}`;
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        window.open(`https://wa.me/50955442656?text=${encodedMessage}`, '_blank');
-        alert('Votre message est prêt à être envoyé sur WhatsApp !');
-        this.reset();
-    });
-    </script>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3 class="logo-footer">Tech <span>&</span> Style</h3><p>Votre partenaire confiance pour la technologie et la mode en Haïti.</p><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://wa.me/50955442656" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div>
+                <div class="footer-section"><h3>Navigation</h3><ul><li><a href="index.html">Accueil</a></li><li><a href="services.html">Services Tech</a></li><li><a href="chaussures.html">Baskets</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-section"><h3>Contact Info</h3><p><i class="fas fa-phone"></i> 55 442 656</p><p><i class="fas fa-envelope"></i> <span data-email>contact@techetstyle.ht</span></p><p><i class="fas fa-clock"></i> Lun-Sam : 8h - 18h</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Tech et Style. Tous droits réservés.</p></div>
+        </div>
+    </footer>
+    <!-- Bouton pour remonter en haut -->
+<a href="#" id="scrollTopBtn" title="Remonter en haut"><i class="fas fa-arrow-up"></i></a>
+    <script src="security.js" defer></script>
     <script src="main.js" defer></script>
+    <script>
+        (function(){'use strict';const form=document.getElementById('contact-form');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault();const fullName=document.getElementById('name').value;const phone=document.getElementById('phone').value;const message=document.getElementById('message').value;const whatsappMessage=`Nouveau message de contact:\n\nNom: ${fullName}\nTéléphone: ${phone}\n\nMessage:\n${message}`;const encodedMessage=encodeURIComponent(whatsappMessage);window.open(`https://wa.me/50955442656?text=${encodedMessage}`,'_blank');alert('Votre message est prêt à être envoyé sur WhatsApp !');this.reset()})})();
+    </script>
+    <script src="https://code.tidio.co/1juzgwh1khwevyeb0hdjpgy6dnqhbodr.js" async></script>
 </body>
 </html>

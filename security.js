@@ -15,7 +15,6 @@ class SecurityManager {
     }
 
     init() {
-        // Run security checks as soon as the DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
             this.forceHTTPS();
             this.secureExternalLinks();
@@ -29,8 +28,8 @@ class SecurityManager {
 
     forceHTTPS() {
         if (location.protocol !== 'https:' && !['localhost', '127.0.0.1'].includes(location.hostname)) {
-            console.warn('Connection is not secure. Redirecting to HTTPS.');
-            location.protocol = 'https:';
+            console.warn('Connection is not secure. Redirection vers HTTPS.');
+            location.href = 'https://' + location.hostname + location.pathname + location.search + location.hash;
         }
     }
 
@@ -39,18 +38,22 @@ class SecurityManager {
             if (link.hostname !== window.location.hostname) {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
+                // Accessibilité : description pour les liens externes
+                if (!link.hasAttribute('aria-label')) {
+                    link.setAttribute('aria-label', 'Lien externe vers ' + link.hostname);
+                }
             }
         });
     }
 
     obfuscateEmails() {
         document.querySelectorAll('[data-email]').forEach(el => {
-            const user = 'contact';
-            const domain = 'techetstyle.ht'; // Use your actual domain
-            const email = `${user}@${domain}`;
-            
+            const emailUser = 'contact';
+            const domain = 'techetstyle.ht';
+            const email = `${emailUser}@${domain}`;
             if (el.tagName === 'A') {
                 el.href = 'mailto:' + email;
+                el.setAttribute('aria-label', 'Envoyer un mail à ' + email);
             }
             el.textContent = email;
         });
@@ -58,10 +61,7 @@ class SecurityManager {
 
     sanitizeInput(input) {
         if (typeof input !== 'string') return '';
-        
         const sanitized = input.substring(0, this.config.maxInputLength);
-        
-        // More robust sanitization
         const tempDiv = document.createElement('div');
         tempDiv.textContent = sanitized;
         return tempDiv.innerHTML;
@@ -78,7 +78,6 @@ class SecurityManager {
         setInterval(() => {
             if (Date.now() - this.state.lastActivity > this.config.inactivityTimeout) {
                 SecurityLogger.log('user_inactive', { timeout: this.config.inactivityTimeout });
-                // Optional: Add a visual indicator or log out the user
             }
         }, 60000);
     }
@@ -89,7 +88,6 @@ class SecurityManager {
 
         if (this.state.failedAttempts >= this.config.maxFailedAttempts) {
             SecurityLogger.log('lockout_triggered', { duration: this.config.lockoutDuration });
-            // Here you could disable forms or trigger a server-side IP ban
             setTimeout(() => {
                 this.state.failedAttempts = 0;
                 SecurityLogger.log('lockout_lifted');
@@ -103,9 +101,10 @@ class SecurityManager {
             const devtools_opened = window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold;
             if (devtools_opened) {
                 SecurityLogger.log('devtools_opened');
+                // Optionnel : afficher un avertissement
+                // alert('Attention : Les outils de développement sont ouverts.');
             }
         };
-        // Check periodically
         setInterval(check, 1000);
     }
 
@@ -128,10 +127,7 @@ class SecurityLogger {
                 url: window.location.href,
             };
             logs.push(logEntry);
-            
-            // Keep logs from getting too large
             if (logs.length > 100) logs.shift();
-            
             localStorage.setItem('securityLogs_ts', JSON.stringify(logs));
         } catch (e) {
             console.error('Failed to write to SecurityLogger.', e);
@@ -139,5 +135,4 @@ class SecurityLogger {
     }
 }
 
-// Initialize the security systems
 const securityManager = new SecurityManager();
